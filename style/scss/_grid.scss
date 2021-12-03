@@ -1,0 +1,28 @@
+.row{
+    display: flex;
+}
+
+.flex-end{
+    justify-content: flex-end;
+}
+@for $i from 1 through 12 {
+    .col-lg-#{$i}{
+        width: ($i / 12) * 100%;
+    }
+}
+
+@media only screen and (max-width: 960px){
+    @for $i from 1 through 12 {
+        .col-md-#{$i}{
+            width: ($i / 12) * 100%;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px){
+    @for $i from 1 through 12 {
+        .col-xs-#{$i}{
+            width: ($i / 12) * 100%;
+        }
+    }
+}

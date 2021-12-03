@@ -1,0 +1,174 @@
+@import "grid";
+@import "default";
+@import "mediaQueries";
+
+main{
+    height: 200vh;
+}
+
+#testimonial{
+    background-image: url(../../media/testimonial-bg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    .container{
+        width: 70%;
+        height: 300px;
+        margin: 0 auto;
+        .ttm__heading{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            align-content: center;
+            height: 300px;
+            width: 500px;
+            float: right;
+            text-align: end;
+            color: white;
+
+            &_text{
+                font-size: 1.125rem;
+                line-height: 30px;
+            }
+            &_head{
+                font-family: 'Montserrat', sans-serif;
+                font-size: 3rem;
+                font-weight: 400;
+                width: 100%;
+            }
+        }
+        .relativeformain{
+            position: relative;
+        }
+        .ttm__main{
+            justify-content: space-between;
+            height: 260px;
+            display: flex;
+            flex-wrap: wrap;
+            color: #808080;
+            position: absolute;
+            top: -90px;
+
+            .info{
+                height: 100%;
+                text-align: center;
+                display: flex;
+                align-content: space-between;
+                flex-wrap: wrap;
+                justify-content: center ;
+                &__photo{
+                    height: 180px;
+                    width: 180px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                    &_img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: transform .2s linear;
+                    }
+                    &:hover img{
+                        transform: scale(1.2);
+                    }
+                }
+                &__name{
+                    width: 100%;
+                    font-size: 1.125rem;
+                    a{  
+                        font-family: 'Montserrat', sans-serif;
+                        color: #24cdd5 !important;
+                    }
+                }   
+                &__loc{
+                    width: 100% ;
+                    font-size: 14px;
+                }
+            }
+            &__buttons{
+                position: absolute;
+                bottom: 0;
+                width: inherit;
+                height: 35px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                #prew,#next{
+                    position: relative;
+                    width: 35px;
+                    height: 100%;
+                    color: black;
+                    cursor: pointer;
+                    i{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                    }
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 50%;
+                        transform: scale(0);
+                        opacity: 0;
+                        transition: transform .3s linear , opacity .3s linear;
+                        background-image: linear-gradient(to right, #5192e1, #23ced5,#5192e1);
+                    }
+                    ::before{
+                        z-index: 33;
+                        position: relative;
+                    }
+                    
+                    &:hover{
+                        color: white;
+                        &::after{
+                            transform: scale(1);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+            &__feedback{
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap ;
+                align-content: center;
+                padding-top: 50px;
+                &_text{
+                    font-weight: 500;
+                    font-size: 14px;
+                }
+                &_stars{
+                    padding-top: 20px;
+                    font-size: 12px;
+                    i{
+                        transition: color .3s linear;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.ttm-active{
+    animation: fadeIn .3s linear;
+}
+
+

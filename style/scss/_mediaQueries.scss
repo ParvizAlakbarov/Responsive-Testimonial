@@ -1,0 +1,30 @@
+@media only screen and (max-width: 960px){
+    html{
+        font-size: 12px;
+    }
+    .ttm__heading{
+        justify-content: center !important ;
+        &_head{
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .ttm__main{
+        justify-content: center !important;
+        &__feedback{
+            justify-content: center !important;
+            &_text{
+                text-align: center;
+            }
+        }
+    }
+    .flex-end{
+        justify-content: center;
+    }
+    
+}
+@media only screen and (max-width:600px){
+    html{
+        font-size: 10px;
+    }
+}
